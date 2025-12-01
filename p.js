@@ -42,11 +42,12 @@ longitude = data[0].lon;
 let response2 = await fetch(newurl)
 let data2 = await response2.json();
 uv.innerText=`UV Index\n ${data2.current.uv_index}`;
-pm2_5.innerText=`PM2_5\n${data2.current.pm2_5}μg/m`;
-pm10.innerText=`PM10\n${data2.current.pm10}μg/m`;
+pm2_5.innerHtml=`PM<sup>(2.5)</sup>\n${data2.current.pm2_5}μg/m`;
+pm10.innerHtml=`PM<sup>(10)</sup>\n${data2.current.pm10}μg/m`;
 
 
 }
 Gateinfo();
 btn.addEventListener("click",(Gateinfo));
+
 
